@@ -1,3 +1,46 @@
+//FIREBASE########################################################
+
+//  Your Firebase configuration
+
+// Initialize Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBIR5A3cZFW_XnoTT02azJI-GoM3j6cyvE",
+  authDomain: "kitchen-chronicles-2b2d6.firebaseapp.com",
+  databaseURL:
+    "https://kitchen-chronicles-2b2d6-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "kitchen-chronicles-2b2d6",
+  storageBucket: "kitchen-chronicles-2b2d6.appspot.com",
+  messagingSenderId: "729708529241",
+  appId: "1:729708529241:web:92e6d38f7280b336bd9348",
+  measurementId: "G-SHS0K08BLV",
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Function to log in with Google
+function loginWithGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then((result) => {
+      // User is signed in
+      const user = result.user;
+      document.getElementById(
+        "user-info"
+      ).innerText = `Logged in as: ${user.displayName}`;
+    })
+    .catch((error) => {
+      // Handle errors
+      console.error("Error logging in:", error);
+    });
+}
+
+// Add click event listener to the login button
+document.getElementById("login").addEventListener("click", loginWithGoogle);
+
+// SEARCH #######################################################
 document
   .getElementById("searchbar")
   .addEventListener("submit", function (event) {

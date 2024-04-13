@@ -22,7 +22,10 @@
         <button type="submit">Search</button>
       </form>
       <div class="myrecipes">MYRECIPES</div>
-      <div class="login">LOGIN</div>
+      <div class="login">
+        <button id="login">Login with Google</button>
+        <p id="user-info"></p>
+      </div>
     </nav>
     <div class="main">
       <div class="recipe-list recipe-box">
@@ -33,6 +36,9 @@
         <div class="recipe-container"></div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.4/firebase-auth-compat.js"></script>
+
     <script src="script.js"></script>
   </body>
 </html>
