@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Recipes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <nav class="navbar">
+      <div class="logo-container">LOGO</div>
+      <a href="/" class="name">TITLE</a>
+      <form id="searchbar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a recipe..."
+        />
+        <button type="submit">Search</button>
+      </form>
+      <a href="/myrecipes.html" class="myrecipes-page">MYRECIPES</a>
+
+      <div class="login">
+        <button id="login">Login with Google</button>
+        <p id="user-info"></p>
+      </div>
+    </nav>
+    <div class="main">
+      <!-- ############################################ -->
+      <div class="my-recipe-list my-recipe-box">
+        <h2 class="title">My recipes</h2>
+      </div>
+      <div class="my-recipe-view my-recipe-box">
+        <h2 class="title">Recipe name</h2>
+        <div class="my-recipe-container"></div>
+      </div>
+      <div id="addRecipeModal">
+        <label for="">Name</label>
+        <input id="titleInput" type="text" />
+        <div class="ingredient-input">
+          <label for="">Ingredient</label>
+          <input id="ingredientInput" type="" />
+          <label for="">Quantity</label>
+          <input type="text" />
+          <label for="">Unit</label>
+          <input id="unitInput" type="text" />
+          <button id="addIngredientButton"></button>
+        </div>
+        <div class="step-input">
+          <label for="">Cooking step</label>
+          <input id="cookingStepInput" type="text" />
+        </div>
+        <button id="saveButton">Save recipe</button>
+      </div>
+    </div>
+    <script>
+      // Fetch the content of navbar.html
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          // Inject the navbar HTML into the navbar element
+          document.getElementById("navbar").innerHTML = data;
+        })
+        .catch((error) => console.error("Error fetching navbar:", error));
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

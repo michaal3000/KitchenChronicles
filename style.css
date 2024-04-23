@@ -47,11 +47,11 @@ body {
   min-height: 400px;
   height: auto;
   width: 90%;
-
   margin: auto;
 }
 
-.recipe-list {
+.recipe-list,
+.my-recipe-list {
   background-color: #eadfb4;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,8 @@ body {
   min-height: 800px;
 }
 
-.recipe-item {
+.recipe-item,
+.my-recipe-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,12 +130,32 @@ body {
 
 /*  */
 
-.recipe-view {
+.recipe-view,
+.my-recipe-view {
   background-color: #f6995c;
 }
 
-.recipe-box {
+.recipe-box,
+.my-recipe-box {
   width: 45%;
 }
 
-/* API#################################################################### */
+/* Myrecipe################################################################
+ <div id="addRecipeModal">
+        <input id="titleInput" type="text" />
+        <input id="ingredientInput" type="" />
+        <input id="unitInput" type="text" />
+        <input id="cookingStepInput" type="text" />
+        <button id="saveButton">Save recipe</button>
+      </div>
+#### */
+
+#addRecipeModal {
+  position: absolute;
+  background-color: aqua;
+  width: 60%;
+  height: 60%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
